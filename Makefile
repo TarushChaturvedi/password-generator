@@ -10,3 +10,6 @@ run:
 clean:
 	rm -rf bin/
 	mkdir bin
+
+install:
+	cp bin/password-generator /bin/
