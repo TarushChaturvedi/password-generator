@@ -12,7 +12,7 @@ void genPassword(int len) {
 
   int randomizer = 0;
   
-  srand((uint)time(NULL)); // Set differrent seed each time
+  srand(time(NULL)); // Set differrent seed each time
 
   char* password = malloc(sizeof(char) * len + 1);
 
