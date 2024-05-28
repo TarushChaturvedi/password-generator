@@ -6,14 +6,16 @@
 const char numbers[] = "1234567890";
 const char alphabets[] = "abcdefghijklmnopqrstuvwxyz";
 const char ALPHABETS[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const char symbols[] = "!@#$%^&*()-_=+|:;";
+const char symbols[] = "~!@#$%^&*()-_=+|:;'<>.?\\/";
 
 void genPassword(int len) {
 
   int randomizer = 0;
   
-  srand((uint)time(NULL));
+  srand((uint)time(NULL)); // Set differrent seed each time
+
   char* password = malloc(sizeof(char) * len + 1);
+
   randomizer = rand() % 4;
 
   for (int i = 0; i < len; i++) {
@@ -36,7 +38,7 @@ void genPassword(int len) {
     }
   }
 
-  free(password);
+  free(password); // Free up memory
 
   printf("\n");
 }
