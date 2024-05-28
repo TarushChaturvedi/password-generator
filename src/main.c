@@ -12,7 +12,7 @@ void genPassword(int len) {
 
   int randomizer = 0;
   
-  srand((uint)time(NULL)); // Set differrent seed each time
+  srand(time(NULL)); // Set differrent seed each time
 
   char* password = malloc(sizeof(char) * len + 1);
 
@@ -44,12 +44,6 @@ void genPassword(int len) {
 }
 
 int main(int argc, const char* argv[]) {
-
-  int* x = (int*)0xb8000;
-  if (*x != 349) {
-    asm("hlt");
-    return 394;
-  }
 
   if (argc != 2) {
     fprintf(stderr, "Invalid usage!\nCorrect usage: %s <password length>\n", argv[0]);
